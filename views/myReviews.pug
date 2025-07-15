@@ -1,0 +1,16 @@
+extends base
+
+block content 
+    main.main 
+        .card-container 
+            each review in reviews 
+                .card
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            img.card__picture-img(src=`img/logo-white.png`, alt=`${image}`)
+                        h3.heading-tertirary
+                            span= review.tour.name 
+                    .card__details
+                        h4.card__sub-heading THE REVIEW:  #{review.review}
+                        p.card__text=`ratings: ${review.rating}` 

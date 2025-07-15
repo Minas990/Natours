@@ -1,0 +1,59 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning node express and mongoe db",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server",
+    "start:prod": "set NODE_ENV=production&&nodemon server.js"
+  },
+  "author": "Mina bakheet",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "compression": "^1.8.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "esbuild": "0.25.5",
+    "express": "^5.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "leaflet": "^1.9.4",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^8.16.0",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "nodemailer": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "pug": "^3.0.3",
+    "sanitize-html": "^2.17.0",
+    "sharp": "^0.34.2",
+    "slugify": "^1.6.6",
+    "stripe": "^18.3.0",
+    "validator": "^13.15.15",
+    "xss": "^1.0.15",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "eslint-plugin-react": "^7.37.5",
+    "parcel": "^2.15.4",
+    "prettier": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
