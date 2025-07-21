@@ -35,7 +35,7 @@ const userShcema =new mongoose.Schema({
     passwordConfirm: {
         type: String,
         required: [true,'plz confirm ur password'],
-        //be aware that work only in save not upade
+        //be aware that work only in save not update
         validate: {
             validator: function(val) {
                 return this.password ===  val;
@@ -55,7 +55,7 @@ const userShcema =new mongoose.Schema({
 });
 
 userShcema.pre('save',function(next) {
-    if(!this.isModified('password') || this.isNew)//isNew for checking if its new doc as new doc considered as modified an empty doc right ?
+    if(!this.isModified('password') || this.isNew)//new doc considered modified
     {
         return next();
     }
@@ -64,10 +64,10 @@ userShcema.pre('save',function(next) {
 });
 
 userShcema.pre('save',async function(next) {
-    //does the password modified or others ?
+    
     if(!this.isModified('password'))
         return next();
-    this.password =await bcrypt.hash(this.password,12);//password should not be stored as plaint/text
+    this.password =await bcrypt.hash(this.password,12);//password should not be stored as plain/text
     this.passwordConfirm = undefined;
     next();
 });
@@ -83,11 +83,11 @@ userShcema.pre(/^find/,function(next) {
 
 //instanceMethod 
 userShcema.methods.correctPassword =async function(candidatePassword,userPassword) {
-    //candidate is not hashed the other yes
+    //candidate is not hashed the other yes 
     return await bcrypt.compare(candidatePassword,userPassword);
 }
 
-//be aware that this function return true  if the password changed not the opposite so u seek for false 
+//be aware this function return true  if the password changed not the opposite so u seek for false 
 //to continue ur validation journey
 userShcema.methods.changePasswordAfter = function(JWTTimestamp) 
 {
